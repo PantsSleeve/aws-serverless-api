@@ -1,0 +1,49 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug Lambdas",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceRoot}/node_modules/serverless/bin/serverless",
+            "args": [
+                "-r",
+                "ts-node/register",
+                "offline",
+                "--noAuth",
+                "-s",
+                "test",
+                "--colors"
+            ],
+            "cwd": "${workspaceRoot}",
+            "protocol": "inspector",
+            "env": {
+                "AWS_XRAY_CONTEXT_MISSING": "LOG_ERROR",
+            },
+            "skipFiles": [
+                "${workspaceFolder}/node_modules/**/*.js",
+                "${workspaceFolder}/lib/**/*.js",
+                "<node_internals>/**/*.js"
+            ]
+        },
+        {
+            "name": "Debug Tests",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceRoot}/node_modules/.bin/jest",
+            "args": [
+                "--colors"
+            ],
+            "env": {
+                "AWS_XRAY_CONTEXT_MISSING": "LOG_ERROR",
+            },
+            "cwd": "${workspaceRoot}",
+            "protocol": "inspector",
+            "skipFiles": [
+                "${workspaceFolder}/node_modules/**/*.js",
+                "${workspaceFolder}/lib/**/*.js",
+                "<node_internals>/**/*.js"
+            ]
+        }
+    ]
+}

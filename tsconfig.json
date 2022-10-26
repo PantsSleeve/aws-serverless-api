@@ -1,0 +1,30 @@
+{
+  "extends": "./tsconfig.paths.json",
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["src/*"],
+    },
+    "lib": ["ESNext"],
+    "moduleResolution": "node",
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "removeComments": true,
+    "sourceMap": true,
+    "target": "ES2020",
+    "outDir": "lib"
+  },
+  "include": [
+    "src/**/*",
+    "test/**/*",
+  ],
+  "exclude": [
+    "node_modules/**/*",
+    ".serverless/**/*",
+    ".webpack/**/*",
+    "_warmup/**/*",
+    ".vscode/**/*"
+  ],
+  "ts-node": {
+    "require": ["tsconfig-paths/register"]
+  }
+}

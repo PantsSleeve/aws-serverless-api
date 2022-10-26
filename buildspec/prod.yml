@@ -1,0 +1,18 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 16
+    commands:
+      - npm install
+  pre_build:
+    commands:
+      - npm run lint
+      - ./node_modules/.bin/jest
+  build:
+    commands:
+      - npm run deploy:prod
+cache:
+  paths:
+    - 'node_modules/**/*'

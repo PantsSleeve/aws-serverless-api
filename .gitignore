@@ -1,0 +1,14 @@
+# Packages
+node_modules
+
+# Builds
+.webpack
+.serverless
+
+# Code coverage
+coverage
+test-reports
+junit.xml
+
+# OSX
+.DS_Store
