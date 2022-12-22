@@ -20,7 +20,7 @@
     "source-map-support": "^0.5.21"
   },
   "devDependencies": {
-    "@serverless/typescript": "^3.21.0",
+    "@serverless/typescript": "^3.25.0",
     "@types/aws-lambda": "^8.10.108",
     "@types/jest": "^29.2.0",
     "@types/node": "^18.11.7",

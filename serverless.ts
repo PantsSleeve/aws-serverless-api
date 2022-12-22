@@ -6,7 +6,6 @@ import resources from './config/resources';
 const serverlessConfiguration: AWS = {
   service: 'todo-add-repo-name',
   frameworkVersion: '3',
-  variablesResolutionMode: '20210326',
   custom: {
     webpack: {
       webpackConfig: './webpack.config.js',
@@ -38,14 +37,13 @@ const serverlessConfiguration: AWS = {
       name: '${file(config/env.yml):${self:provider.stage}.AWS_ACCOUNT}.serverless.deploys',
     },
     name: 'aws',
-    runtime: 'nodejs16.x',
+    runtime: 'nodejs18.x',
     stage: '${opt:stage, "test"}',
     apiGateway: {
       minimumCompressionSize: 1024,
       shouldStartNameWithService: true,
     },
     environment: '${file(config/env.yml):${self:provider.stage}}' as any,
-    lambdaHashingVersion: '20201221',
     iam,
   },
   functions,
